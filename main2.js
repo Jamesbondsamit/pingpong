@@ -1,5 +1,6 @@
-function preload() {
-	world_start = loadSound("ball_touch_paddel.wav");
+ function preload() {
+	ball_touch_paddle = loadSound("ball_touch_paddel.wav");
+	missed=loadSound("missed.wav");
 	setSprites();
 	MarioAnimation();
 }
@@ -7,6 +8,7 @@ function preload() {
 function setup() {
 	canvas = createCanvas(1240,336);
 	video= createCapture(VIDEO)
+	video.parent(canvas);
 	video.size(600,300);
 	instializeInSetup(ping-pong);
 
